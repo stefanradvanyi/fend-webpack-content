@@ -1,15 +1,16 @@
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const adjustedPath = '/Users/sradvanyi/Documents/Webentwicklung/Udacity/Frontend/fend-webpack-content/src/client/views';
 
 const app = express()
 
-app.use(express.static('dist'))
+app.use(express.static('../client'))
 
-console.log(__dirname)
+console.log('DirName2: ', __dirname + '/../client/views/index.html')
 
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
+    res.sendFile(adjustedPath + '/index.html')
 })
 
 // designates what port the app will listen to for incoming requests
